@@ -35,7 +35,7 @@ class DetailActivity : BaseActivity<DetailActivityBinding>() {
         binding.titleTextView.text = article.title
         binding.contentTextView.text = article.content
 
-        binding.toolbar.setOnClickListener {
+        binding.backButton.setOnClickListener {
             onBackPressed()
         }
         binding.fullButton.setOnClickListener {

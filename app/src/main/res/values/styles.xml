@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/appOrange</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/appGrey</item>
-        <item name="colorAccent">@color/appOrange</item>
+        <item name="colorAccent">@color/white</item>
 
     </style>
 
@@ -40,5 +40,11 @@
         <item name="android:elevation">@dimen/size4</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="cornerSizeBottomRight">@dimen/size12</item>
     </style>
 </resources>

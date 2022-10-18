@@ -15,6 +15,6 @@ fun ImageView.setImage(context: Context, uri: Uri?) {
 fun ImageView.setImage(context: Context, path: String?) {
     Glide.with(context)
         .load(path)
-        .override(240, 240)
+        .override(500, 400)
         .into(this)
 }
