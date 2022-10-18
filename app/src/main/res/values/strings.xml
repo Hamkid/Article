@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Articles</string>
+
+    <string name="detail_button_full">Full article</string>
+    <string name="detail_button_share">Share</string>
+
+    <string name="main_title">Front page</string>
+</resources>

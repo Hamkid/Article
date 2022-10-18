@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/appBlue"
+            app:contentScrim="@color/appGreyLight"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/photoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size256"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    style="@style/ToolbarStyle"
+                    android:elevation="0dp"
+                    android:layout_width="@dimen/size60"
+                    app:navigationIcon="@drawable/ic_back"
+                    app:layout_collapseMode="pin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    app:title="@string/app_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/size12"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sourceTextView"
+                style="@style/GeneralText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textSize="@dimen/font16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Lorem upsum" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTextView"
+                style="@style/HeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/font16"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sourceTextView"
+                tools:text="Lorem ipsum" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/contentTextView"
+                style="@style/GeneralText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/size20"
+                android:text="@string/app_name"
+                android:textColor="@color/appGrey"
+                android:textSize="@dimen/font16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+                tools:text="Lorem upsum" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/shareButton"
+                style="@style/GeneralText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size20"
+                android:text="@string/detail_button_share"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/font18"
+                app:layout_constraintBottom_toBottomOf="@id/fullButton"
+                app:layout_constraintEnd_toStartOf="@+id/fullButton"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contentTextView"
+                app:layout_constraintTop_toTopOf="@id/fullButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fullButton"
+                style="@style/GeneralText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size20"
+                android:layout_marginTop="@dimen/size24"
+                android:background="@drawable/purple_background"
+                android:padding="@dimen/size8"
+                android:text="@string/detail_button_full"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/shareButton"
+                app:layout_constraintTop_toBottomOf="@+id/contentTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
