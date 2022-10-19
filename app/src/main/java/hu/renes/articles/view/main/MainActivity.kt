@@ -1,9 +1,8 @@
 package hu.renes.articles.view.main
 
 import android.view.LayoutInflater
-import android.widget.Toast
+import android.view.View
 import androidx.activity.viewModels
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import dagger.hilt.android.AndroidEntryPoint
 import hu.renes.articles.R
@@ -14,10 +13,10 @@ import hu.renes.articles.view.base.BaseActivity
 import hu.renes.articles.view.detail.DetailActivity
 import hu.renes.articles.view.main.adapter.ArticleAdapter
 import hu.renes.articles.view.main.adapter.ArticleVM
-import hu.renes.articles.view.main.adapter.ArticleViewHolder
 import hu.renes.articles.view.main.adapter.ClickListener
-import timber.log.Timber
 import javax.inject.Inject
+import kotlin.math.abs
+
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<MainActivityBinding>() {
@@ -38,6 +37,18 @@ class MainActivity : BaseActivity<MainActivityBinding>() {
             }
         }
         binding.recyclerView.adapter = adapter
+
+        binding.appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+            if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0) {
+                binding.menuButton.visibility = View.VISIBLE
+                binding.menuGroup.visibility = View.GONE
+            } else {
+                binding.menuButton.visibility = View.GONE
+                binding.menuGroup.visibility = View.VISIBLE
+            }
+        }
+
+
         viewModel.handleEvent(MainEvent.OnStart)
         viewModel.articles.observe(this) {
             adapter.setItems(it)

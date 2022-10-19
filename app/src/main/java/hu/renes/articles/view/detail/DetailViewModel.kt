@@ -6,9 +6,7 @@ import hu.renes.articles.view.base.BaseViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
-sealed class MainEvent<out T> {
-
-}
+sealed class MainEvent<out T>
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(

@@ -5,4 +5,5 @@
     <string name="detail_button_share">Share</string>
 
     <string name="main_title">Front page</string>
+    <string name="main_title_collapse">N</string>
 </resources>
